@@ -1,0 +1,4 @@
+khozaabaliat.ir {
+    tls /etc/caddy/certs/fullchain.pem /etc/caddy/certs/privkey.pem
+    reverse_proxy localhost:8000
+}

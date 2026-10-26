@@ -1,0 +1,16 @@
+[Unit]
+Description=MCP gateway server
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/root/gateway
+EnvironmentFile=/root/gateway/.env
+ExecStart=/root/gateway/.venv/bin/python server.py
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
